@@ -1,0 +1,13 @@
+
+> team-showcase@1.0.0 build
+> vite build
+
+[36mvite v6.4.3 [32mbuilding for production...[36m[39m
+transforming...
+[32m✓[39m 1951 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                 [39m[1m[2m  0.55 kB[22m[1m[22m[2m │ gzip:   0.34 kB[22m
+[2mdist/[22m[35massets/index-si5K2Q4t.css  [39m[1m[2m 19.72 kB[22m[1m[22m[2m │ gzip:   4.48 kB[22m
+[2mdist/[22m[36massets/index-BVDn9BUl.js   [39m[1m[2m321.03 kB[22m[1m[22m[2m │ gzip: 101.89 kB[22m
+[32m✓ built in 15.10s[39m
