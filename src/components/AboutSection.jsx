@@ -1,4 +1,28 @@
 import { motion } from 'framer-motion';
+import { Leaf, Lightbulb, Sprout, Sunrise } from 'lucide-react';
+
+const logoMeanings = [
+  {
+    title: 'Matahari Terbit',
+    text: 'Menandai awal yang penuh harapan, membawa kehangatan, optimisme, dan semangat baru untuk Desa Golan.',
+    Icon: Sunrise,
+  },
+  {
+    title: 'Pancaran Sinar',
+    text: 'Menggambarkan ilmu, ide, dan inovasi yang dibagikan agar tumbuh menjadi manfaat nyata bagi masyarakat.',
+    Icon: Lightbulb,
+  },
+  {
+    title: 'Tunas Kehidupan',
+    text: 'Melambangkan pertumbuhan dan keberlanjutan melalui kolaborasi mahasiswa bersama warga desa.',
+    Icon: Sprout,
+  },
+  {
+    title: 'Lahan Hijau',
+    text: 'Merepresentasikan kesuburan alam, kesejahteraan, dan kehidupan Desa Golan yang harmonis serta lestari.',
+    Icon: Leaf,
+  },
+];
 
 const highlights = [
   // {
@@ -25,15 +49,29 @@ export function AboutSection() {
         <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-[-0.05em] text-text md:text-5xl">
         KKN UNIWA 05 Desa Golan yang berdedikasi untuk memberikan kontribusi positif bagi masyarakat.
         </h2>
-        <div id="logo" className="mt-8 rounded-[26px] border border-dashed border-primary/35 bg-primary/5 p-6 md:p-8">
-          <img src={new URL('../assets/logoKKN.png', import.meta.url).href} alt="Logo KKN UNIWA 05 Desa Golan" className="mb-5 h-28 w-28 rounded-2xl object-cover shadow-sm" />
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Penjelasan logo</p>
-          <p className="mt-3 max-w-2xl text-base leading-7 text-muted">
--Matahari Terbit Melambangkan awal baru, optimisme, kehangatan, serta pencerahan yang dibawa oleh kehadiran mahasiswa KKN ke desa.
--Pancaran Sinar Melambangkan ilmu pengetahuan, inovasi, dan manfaat yang disebarkan ke berbagai aspek kehidupan masyarakat.
--Tunas Melambangkan pertumbuhan, regenerasi, keberlanjutan, dan potensi desa yang sedang dikembangkan. Hal ini menggambarkan mahasiswa dan masyarakat yang bersama-sama menanam benih kebaikan dan pembangunan untuk masa depan.
--Lahan Hijau Melambangkan kesuburan alam Desa Golan, kesejahteraan, serta dinamika kehidupan bermasyarakat yang harmonis dan lestari.
-.</p>
+        <div id="logo" className="mt-8 overflow-hidden rounded-[26px] border border-primary/20 bg-gradient-to-br from-primary/10 via-white/50 to-emerald-50/70 p-6 md:p-8">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center">
+            <img src={new URL('../assets/logoKKN.png', import.meta.url).href} alt="Logo KKN UNIWA 05 Desa Golan" className="h-28 w-28 rounded-2xl object-cover shadow-lg shadow-primary/10" />
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Di balik lambang</p>
+              <h3 className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-text md:text-3xl">Satu logo, empat cerita tentang pengabdian.</h3>
+              <p className="mt-3 max-w-2xl text-base leading-7 text-muted">Setiap unsur visual membawa nilai yang menjadi arah langkah KKN UNIWA 05: hadir, bertumbuh, dan memberi arti.</p>
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {logoMeanings.map(({ title, text, Icon }) => (
+              <div key={title} className="rounded-2xl border border-white/80 bg-white/65 p-4 shadow-sm backdrop-blur-sm">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <h4 className="font-semibold text-text">{title}</h4>
+                </div>
+                <p className="mt-3 text-sm leading-6 text-muted">{text}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">

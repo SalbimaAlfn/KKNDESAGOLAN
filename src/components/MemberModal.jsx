@@ -96,7 +96,7 @@ export function MemberModal({ member, isOpen, onClose }) {
             aria-modal="true"
             aria-labelledby="member-modal-title"
             tabIndex={-1}
-            className="w-full max-w-3xl overflow-hidden rounded-[32px] border border-white/60 bg-white/75 p-3 shadow-[0_30px_80px_rgba(15,23,42,0.25)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900/85"
+            className="max-h-[calc(100vh-2rem)] w-full max-w-3xl overflow-y-auto rounded-[32px] border border-white/60 bg-white/75 p-3 shadow-[0_30px_80px_rgba(15,23,42,0.25)] backdrop-blur-xl dark:border-slate-700 dark:bg-slate-900/85"
           >
             <div className="rounded-[24px] border border-slate-200/70 bg-gradient-to-br from-white via-slate-50 to-sky-50 p-4 dark:border-slate-700 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 sm:p-6">
               <div className="flex items-start justify-between gap-4">

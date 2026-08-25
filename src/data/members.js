@@ -1,4 +1,13 @@
-const memberPhotoModules = import.meta.glob('../assets/members/*', { eager: true, query: '?url', import: 'default' });
+const memberPhotoModules = import.meta.glob('../assets/members/*.{jpg,jpeg,png,webp}', { eager: true, query: '?url', import: 'default' });
+
+const memberPhotosByName = Object.fromEntries(
+  Object.entries(memberPhotoModules).map(([filePath, image]) => [filePath.split('/').pop().split('.')[0], image]),
+);
+
+function getMemberPhotos(id) {
+  const photoNames = [String(id), `${id}${id}2`, `${id}${id}3`];
+  return photoNames.map((photoName) => memberPhotosByName[photoName]).filter(Boolean);
+}
 
 const memberRecords = [
   {
@@ -17,8 +26,6 @@ const memberRecords = [
     motto: 'With a great power, comes a great responsibilty.',
     nim: '20233310053',
     programStudy: 'Pendidikan Bahasa Inggris',
-    image: memberPhotoModules['../assets/members/11.png'],
-    gallery: [memberPhotoModules['../assets/members/11.png'], '/members/12.jpg', '/members/13.jpg'],
     socials: [
     { label: 'Instagram', href: 'https://www.instagram.com/gery0154/' },
   ],
@@ -160,8 +167,6 @@ const memberRecords = [
     motto: 'No pain no gain.',
     nim: '20231110767',
     programStudy: 'Manajemen',
-    image: memberPhotoModules['../assets/members/14.png'],
-    gallery: [memberPhotoModules['../assets/members/14.png'], '/members/15.jpg', '/members/16.jpg'],
     socials: [
     { label: 'Instagram', href: 'https://www.instagram.com/rsqisatria_/' },
     { label: 'TikTok', href: 'https://tiktok.com/@risqisatt_' },
@@ -169,11 +174,17 @@ const memberRecords = [
   },
 ];
 
-export const members = memberRecords.map((member) => ({
-  ...member,
-  nim: member.nim || 'Belum diisi',
-  programStudy: member.programStudy || 'Belum diisi',
-}));
+export const members = memberRecords.map((member) => {
+  const gallery = getMemberPhotos(member.id);
+
+  return {
+    ...member,
+    image: gallery[0] || member.image,
+    gallery: gallery.length ? gallery : member.gallery,
+    nim: member.nim || 'Belum diisi',
+    programStudy: member.programStudy || 'Belum diisi',
+  };
+});
 
 export const teamStats = [
   { label: 'Members', value: '10+' },
