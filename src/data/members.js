@@ -61,7 +61,7 @@ const memberRecords = [
   {
     id: 5,
     name: 'Salbima Alifino Aziz',
-    role: 'Dvisi Acara',
+    role: 'Divisi Acara',
     motto: 'Build simple, fast, and reliable systems.',
     nim: '20232210154',
     programStudy: 'Teknik Informatika',
