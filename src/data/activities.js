@@ -6,7 +6,6 @@ const weekModules = [
   import.meta.glob('../assets/week1/**/*.webp', { eager: true, query: '?url', import: 'default' }),
   import.meta.glob('../assets/week2/**/*.webp', { eager: true, query: '?url', import: 'default' }),
   import.meta.glob('../assets/week3/**/*.webp', { eager: true, query: '?url', import: 'default' }),
-  import.meta.glob('../assets/week4/**/*.webp', { eager: true, query: '?url', import: 'default' }),
 ];
 
 export const activities = weekModules.map((modules, index) => ({

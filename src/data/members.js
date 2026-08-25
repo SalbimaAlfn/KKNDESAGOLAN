@@ -69,7 +69,7 @@ const memberRecords = [
     id: 5,
     name: 'Salbima Alifino Aziz',
     role: 'Divisi Acara',
-    motto: 'Build simple, fast, and reliable systems.',
+    motto: 'Whatever will be, will be.',
     nim: '20232210154',
     programStudy: 'Teknik Informatika',
     socials: [
