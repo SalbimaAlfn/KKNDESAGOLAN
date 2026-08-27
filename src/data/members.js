@@ -16,7 +16,7 @@ const memberRecords = [
     role: 'Dosen Pembimbing Lapangan',
     motto: 'Ship thoughtful experiences.',
     socials: [
-    { label: 'Instagram', href: 'https://www.instagram.com/gery0154/' },
+    { label: 'Instagram', href: 'https://www.instagram.com/fazriyah_lailatul/' },
   ],
   },
   {
@@ -34,7 +34,7 @@ const memberRecords = [
     id: 2,
     name: 'Jesicha Auliya Santri',
     role: 'Wakil Ketua',
-    motto: 'Design with clarity and heart.',
+    motto: 'Semua orang bisa karena terbiasa.',
     nim: '20231110758',
     programStudy: 'Manajemen',
     socials: [
@@ -46,7 +46,7 @@ const memberRecords = [
     id: 3,
     name: 'Nuril Maghfiroh',
     role: 'Sekretaris',
-    motto: 'Tell stories people remember.',
+    motto: 'this too shall pass.',
     nim: '20233330102',
     programStudy: 'PG PAUD',
     socials: [
@@ -69,7 +69,7 @@ const memberRecords = [
     id: 5,
     name: 'Salbima Alifino Aziz',
     role: 'Divisi Acara',
-    motto: 'Whatever will be, will be.',
+    motto: 'whatever will be, will be.',
     nim: '20232210154',
     programStudy: 'Teknik Informatika',
     socials: [
@@ -80,7 +80,7 @@ const memberRecords = [
     id: 6,
     name: 'Siti Nurhanifia Rohma',
     role: 'Divisi Acara',
-    motto: 'Listen deeply, design wisely.',
+    motto: 'jika semua dipikir sekarang, besok mikir apa??',
     nim: '20232210156',
     programStudy: 'Teknik Informatika',
     socials: [
@@ -104,7 +104,7 @@ const memberRecords = [
     id: 8,
     name: 'Siti Aisyah Putri',
     role: 'Divisi Humas',
-    motto: 'Tell stories people remember.',
+    motto: 'Semua akan terbiasa jika dibiasakan, lawan hatimu dengan logikamu.',
     nim: '20233330100',
     programStudy: 'PG PAUD',
     socials: [
@@ -116,7 +116,7 @@ const memberRecords = [
     id: 9,
     name: 'Rahmawagita Kuswandini',
     role: 'Divisi Logistik',
-    motto: 'Tell stories people remember.',
+    motto: 'create your own sunshine.',
     nim: '20231110760',
     programStudy: 'Manajemen',
     socials: [
@@ -128,7 +128,7 @@ const memberRecords = [
     id: 10,
     name: 'Mustofa Latif',
     role: 'Divisi Logistik',
-    motto: 'Tell stories people remember.',
+    motto: 'koteka pecah.',
     nim: '20232230040',
     programStudy: 'Teknik Mesin',
     socials: [
@@ -164,7 +164,7 @@ const memberRecords = [
     id: 13,
     name: 'Risqi Satria Utomo',
     role: 'Divisi Dokumentasi & Media',
-    motto: 'No pain no gain.',
+    motto: 'SEPIRO GEDHENING SENGSORO YEN TINOMPO AMUNG DADI COBA..',
     nim: '20231110767',
     programStudy: 'Manajemen',
     socials: [
