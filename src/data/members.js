@@ -14,7 +14,7 @@ const memberRecords = [
     id: 0,
     name: 'Ibu Lailatul Fazriyah M.H',
     role: 'Dosen Pembimbing Lapangan',
-    motto: 'Ship thoughtful experiences.',
+    motto: 'Berilmu untuk Mengabdi, Berintegritas untuk Menginspirasi.',
     socials: [
     { label: 'Instagram', href: 'https://www.instagram.com/fazriyah_lailatul/' },
   ],
@@ -58,7 +58,7 @@ const memberRecords = [
     id: 4,
     name: 'Agustin Nur Rohmah',
     role: 'Bendahara',
-    motto: 'Tell stories people remember.',
+    motto: 'Semoga kita selalu puas menikmati porsi milik kita, tanpa iri pada piring orang lain".',
     nim: '20231120304',
     programStudy: 'Akuntansi',
     socials: [
@@ -152,7 +152,7 @@ const memberRecords = [
     id: 12,
     name: 'Fitrotul Istiqomah',
     role: 'Divisi Dokumentasi & Media',
-    motto: 'No pain no gain.',
+    motto: 'love yourself.',
     nim: '20231110763',
     programStudy: 'Manajemen',
     socials: [
