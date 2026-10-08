@@ -3,6 +3,10 @@ import { useEffect, useState } from 'react';
 export function useScrollSpy(sectionIds = []) {
   const [activeSection, setActiveSection] = useState(sectionIds[0] ?? '');
 
+  // Callers pass a fresh array each render; key the effect on the joined
+  // string so the observer isn't torn down and rebuilt on every render.
+  const sectionKey = sectionIds.join(',');
+
   useEffect(() => {
     if (!sectionIds.length) return undefined;
 
@@ -26,7 +30,8 @@ export function useScrollSpy(sectionIds = []) {
     elements.forEach((element) => observer.observe(element));
 
     return () => observer.disconnect();
-  }, [sectionIds]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- sectionKey captures identity changes
+  }, [sectionKey]);
 
   return activeSection;
 }

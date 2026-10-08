@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const currentDirectory = path.dirname(fileURLToPath(import.meta.url));
 const assetsDirectory = path.join(currentDirectory, '..', 'src', 'assets');
+const publicDirectory = path.join(currentDirectory, '..', 'public');
 const supportedExtensions = new Set(['.jpg', '.jpeg', '.png']);
 const maxDimension = 1200;
 const quality = 82;
@@ -26,7 +27,11 @@ function formatBytes(bytes) {
 async function getActivityFolders() {
   const entries = await fs.readdir(assetsDirectory, { withFileTypes: true });
   return entries
-    .filter((entry) => entry.isDirectory() && (entry.name === 'albumphoto' || /^week\d+$/i.test(entry.name)))
+    .filter(
+      (entry) =>
+        entry.isDirectory() &&
+        (entry.name === 'albumphoto' || entry.name === 'members' || /^week\d+$/i.test(entry.name)),
+    )
     .map((entry) => path.join(assetsDirectory, entry.name));
 }
 
@@ -44,7 +49,7 @@ async function findSourceImages(directory) {
 
 async function optimizeImage(inputPath) {
   const outputPath = path.join(path.dirname(inputPath), `${path.basename(inputPath, path.extname(inputPath))}.webp`);
-  const relativePath = path.relative(assetsDirectory, inputPath);
+  const relativePath = path.relative(path.join(currentDirectory, '..'), inputPath);
 
   try {
     await fs.access(outputPath);
@@ -84,14 +89,18 @@ async function optimizeImage(inputPath) {
 
 async function main() {
   const folders = await getActivityFolders();
-  console.log(`Optimizing activity images in: ${folders.map((folder) => path.basename(folder)).join(', ') || '(none found)'}`);
+  console.log(`Optimizing images in: ${folders.map((folder) => path.basename(folder)).join(', ') || '(none found)'}`);
   console.log(`Settings: WebP quality ${quality}; max ${maxDimension}x${maxDimension}; no enlargement.\n`);
 
   for (const folder of folders) {
     const images = await findSourceImages(folder);
-    console.log(`${path.relative(assetsDirectory, folder)}/: ${images.length} source image(s)`);
+    console.log(`${path.relative(path.join(currentDirectory, '..'), folder)}/: ${images.length} source image(s)`);
     await Promise.all(images.map((imagePath) => optimizeImage(imagePath)));
   }
+
+  const publicImages = await findSourceImages(publicDirectory);
+  console.log(`public/: ${publicImages.length} source image(s)`);
+  await Promise.all(publicImages.map((imagePath) => optimizeImage(imagePath)));
 
   const savings = statistics.originalBytes
     ? ((statistics.originalBytes - statistics.webpBytes) / statistics.originalBytes) * 100

@@ -128,7 +128,7 @@ const memberRecords = [
     id: 10,
     name: 'Mustofa Latif',
     role: 'Divisi Logistik',
-    motto: 'koteka pecah.',
+    motto: 'tidak ada yang mudah, dan tidak ada yang tidak mungkin,',
     nim: '20232230040',
     programStudy: 'Teknik Mesin',
     socials: [
@@ -187,8 +187,8 @@ export const members = memberRecords.map((member) => {
 });
 
 export const teamStats = [
-  { label: 'Members', value: '10+' },
-  { label: 'Projects', value: '24' },
-  { label: 'Achievements', value: '18' },
-  { label: 'Years Active', value: '5' },
+  { label: 'Anggota Tim', value: '14' },
+  { label: 'Masa Bakti', value: '31', suffix: 'hari' },
+  { label: 'Desa Binaan', value: 'Golan' },
+  { label: 'Periode', value: 'Agu 2026' },
 ];

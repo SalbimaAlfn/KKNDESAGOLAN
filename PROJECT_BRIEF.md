@@ -1,4 +1,7 @@
 # KKN Team Profile Website — Project Brief
+
+> **UPDATE (2026 redesign):** The glassmorphism / gradient-blob / glow direction described in Section 3 has been **replaced** by a *clean institutional* identity derived from `logoKKN.png` — golden yellow `#F5B301` (fills only, never text), forest green `#2E6B3A`, warm paper `#FAF7F0`, serif headings (Source Serif 4), hairline borders, small radii. Motion is intentional and subtle (scroll reveals, parallax, hover sweeps) and respects `prefers-reduced-motion`. Do not reintroduce floating blobs, gradient text, or glassmorphism cards.
+
 ## 1. What This Project Is
 
 A modern digital profile/portfolio website for a **KKN (Kuliah Kerja Nyata)** team — a university community-service program. This is **not** a simple "About Us" page. It's an official portfolio that:

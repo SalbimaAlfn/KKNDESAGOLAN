@@ -11,7 +11,7 @@ export function MainLayout({ children }) {
   }, [isDarkMode]);
 
   return (
-    <div className="min-h-screen bg-background text-text transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
+    <div className="min-h-screen bg-background text-text transition-colors duration-300 dark:bg-night dark:text-night-text">
       <Navbar isDarkMode={isDarkMode} onToggleDarkMode={() => setIsDarkMode((value) => !value)} />
       <main className="pt-5">{children}</main>
       <Footer />
